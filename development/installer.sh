@@ -151,7 +151,7 @@ echo "Getting apps from upstream for $client"
 all_apps=() && install_apps false
 
 echo "Creating site $site_name"
-bench new-site "$site_name" --mariadb-root-password 123 --admin-password admin --no-mariadb-socket
+bench new-site "$site_name" --db-type postgres --mariadb-root-password 123 --admin-password admin --db-host postgresql
 
 echo "Installing apps to $site_name"
 bench --site "$site_name" install-app "${all_apps[@]}"
