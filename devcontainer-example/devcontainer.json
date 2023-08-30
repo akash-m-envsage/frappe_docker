@@ -2,24 +2,36 @@
   "name": "Frappe Bench",
   "forwardPorts": [8000, 9000, 6787],
   "remoteUser": "frappe",
-  "settings": {
-    "terminal.integrated.profiles.linux": {
-      "frappe bash": {
-        "path": "/bin/bash"
-      }
-    },
-    "terminal.integrated.defaultProfile.linux": "frappe bash",
-    "debug.node.autoAttach": "disabled"
+  // "mounts": [
+  //   "source=${localWorkspaceFolder}/.vscode,target=/root/.vscode,type=bind"
+  // ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/bin/zsh"
+          }
+        },
+        "debug.node.autoAttach": "disabled"
+      },
+      "extensions": [
+        "TabNine.tabnine-vscode",
+        "k--kato.intellij-idea-keybindings",
+        "eamodio.gitlens",
+        "vscode-icons-team.vscode-icons",
+        "christian-kohler.path-intellisense",
+        "ms-python.python",
+        "ms-vscode.live-server",
+        "grapecity.gc-excelviewer",
+        "mtxr.sqltools",
+        "vivaxy.vscode-conventional-commits",
+        "visualstudioexptteam.vscodeintellicode"
+      ]
+    }
   },
   "dockerComposeFile": "./docker-compose.yml",
   "service": "frappe",
   "workspaceFolder": "/workspace/development",
-  "shutdownAction": "stopCompose",
-  "extensions": [
-    "ms-python.python",
-    "ms-vscode.live-server",
-    "grapecity.gc-excelviewer",
-    "mtxr.sqltools",
-    "visualstudioexptteam.vscodeintellicode"
-  ]
+  "shutdownAction": "stopCompose"
 }
